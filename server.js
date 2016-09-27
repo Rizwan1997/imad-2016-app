@@ -13,6 +13,84 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
+var articles = {
+    'article one': {
+        title: 'Article one';
+        heading: 'Article one';
+        date: '26/09/2016';
+        content: `<!doctype html>
+                <html>
+                <head>
+                <title>ART ONE</title>
+                </head>
+                <link href="/ui/style.css" rel="stylesheet" />
+                <body>
+                    <a href="/">HOME</a>
+                     <h2>26/09/2016</h2>
+                <div class/"center">
+                    <h2>Article Two</h2>
+                </div> <hr/>
+                <p> This is the content of my first article on page <b>/article-one</b>. Continue reading Continue reading Continue reading Continue reading </p> 
+                <img src="/ui/madi.png" class="img-small"/>
+                </body>
+            </html> `
+    } };
+    'article two':{
+        title: 'Article two';
+        heading: 'Article two';
+        date: '27/09/2016';
+        content: `
+        <!doctype html>
+    <html>
+    <head>
+    <title>Article Two</title>
+    </head>
+    <link href="/ui/style.css" rel="stylesheet" />
+    <body>
+        <a href="/">HOME</a>
+        <h2>27/09/2016</h2>
+    /<div class="center">
+        <h2>Article Two</h2>
+    </div> <hr/>
+    <p> This is the content of my first article on page <b>/article-two</b>. Continue reading Continue reading Continue reading Continue reading </p> 
+    <img src="/ui/madi.png" class="img-small"/>
+    </body>
+
+
+    </html>`
+        
+    } };
+    };
+
+function createtemplate(data){
+    var title = data.title;
+    var heading = data.heading;
+    var date = data.date;
+    var htmltemplate = `
+    <!doctype html>
+                <html>
+                <head>
+                <title>$(title)</title>
+                </head>
+                <link href="/ui/style.css" rel="stylesheet" />
+                <body>
+                    <a href="/">HOME</a>
+                   <h2>$(date)</h2> 
+                <div class="center">
+                    <h2>$(heading)</h2>
+                </div> <hr/>
+                <p> This is the content of my first article on page <b>/article-one</b>. Continue reading Continue reading Continue reading Continue reading </p> 
+                <img src="/ui/madi.png" class="img-small"/>
+                </body>
+            </html> `
+            return htmltemplate;
+    }
+var articleName = req.params.articleName;
+
+app.get('/article', function(res,req){
+    res.send(createtemplate(articles[articleName]));
+});
+    
 app.get('/article-one', function (req, res) {
     res.sendFile(path.join(__dirname, 'article one.html'));
 });
