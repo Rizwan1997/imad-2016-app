@@ -14,7 +14,7 @@ app.get('/ui/style.css', function (req, res) {
 });
 
 var articles = {
-    'article.one': {
+    'article-one': {
         title: 'Article one';
         heading: 'Article one';
         date: '26/09/2016';
@@ -35,7 +35,7 @@ var articles = {
                 </body>
             </html> `
     } };
-    'article.two':{
+    'article-two':{
         title: 'Article two';
         heading: 'Article two';
         date: '27/09/2016';
@@ -85,19 +85,12 @@ function createtemplate(data){
             </html> `
             return htmltemplate;
     }
-var articleName = req.params.articleName;
 
-app.get('/article', function(res,req){
+app.get('/:articleName', function(res,req){
+    var articleName = req.params.articleName;
     res.send(createtemplate(articles[articleName]));
 });
     
-app.get('/article-one', function (req, res) {
-    res.sendFile(path.join(__dirname, 'article one.html'));
-});
-
-app.get('/article%20two', function (req, res) {
-    res.sendFile(path.join(__dirname, 'article two.html'));
-});
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
