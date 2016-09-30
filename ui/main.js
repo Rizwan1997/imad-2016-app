@@ -6,7 +6,7 @@ button.onclick=function(){
    request.onreadystatecharge = function(){
        if(request.readystate=== XMLHttpRequest.DONE){
            if(request.status===200){
-               var counter= counter+1;
+               var counter= request.responseText;
                var span=document.getElementById('count');
                span.innerHTML=counter.toString();
 
@@ -14,6 +14,6 @@ button.onclick=function(){
        }
    };
    request.open('GET','http://rizwan1997.imad.hasura-app.io/counter',true);
-   request.send(null);
+   request.send(true);
 };
     
