@@ -27,7 +27,8 @@ body {
     font-style: italic;
 }
 #udeco{
-    text-decoration: underline;
+    
+    font-style: italic;
 }
 .border{
    border: 2px black;
