@@ -13,60 +13,10 @@ app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
-var article-one : {
-     title= 'Article one';
-     heading= 'Article one';
-     date= '2/09/2016';
-     content: `<!doctype html>
-<html>
-<head>
-    <title>article one</title>
-     <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-   
-    <body>
-        <a href="/">HOME</a>
-        
-    <div class="center">
-        <h2>Article Two</h2>
-    </div> <hr/>
-    <p> This is the content of my first article on page <b>/article-two</b>. Continue reading Continue reading Continue reading Continue reading </p> 
-    <img src="/ui/madi.png" class="img-small"/>
-    </body>
-
-
-</html>`;
-
-     }
-
-
-function createTemplate(data){
-    var title= data.title;
-    var heading=  data.heading;
-    var date= data.date;
-    var htmltemplate= `<!doctype html>
-<html>
-<head>
-    <title>$(title)</title>
-     <link href="/ui/style.css" rel="stylesheet" />
-    </head>
-   
-    <body>
-        <a href="/">HOME</a>
-        
-    <div class="center">
-        <h2>$(heading)</h2>
-    </div> <hr/>
-    <p> $(date) </p> 
-    <img src="/ui/madi.png" class="img-small"/>
-    </body>
-
-    </html>`
-return htmltemplate;
-}
-app.get('/:articleName', function(req,res){
-    var articleName = req.params.articleName;
-    res.send(createTemplate(articleName));
+var counter= 0;
+app.get('/counter', function(req,res){
+    counter=counter+1;
+    res.send(counter.tostring());
 });
 
 app.get('/ui/main.js', function (req, res) {
