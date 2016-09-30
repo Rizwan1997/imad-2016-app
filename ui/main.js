@@ -10,4 +10,4 @@ var img=document.getElementbyId('madi');
     }   
 img.onclick=function(){
     var interval=setInterval(moveright,50);
-}
+};
