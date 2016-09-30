@@ -1,6 +1,10 @@
 console.log('Loaded!');
 
-var img =  document.getElementById('main-text');
-img.innerHTML="new value";
-
+var button=document.getElementById('counter');
+var count = document.getElementById('count');
+var counter= 0;
+button.onclick=function(){
+   counter = counter+1;
+   count.innerHTML= res.send(counter.toString());
+};
     
