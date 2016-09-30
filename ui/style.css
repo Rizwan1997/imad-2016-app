@@ -20,8 +20,8 @@ body {
     height: 200px;
 }
 .img-small{
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
 }
 .italic{
     font-style: italic;
@@ -31,5 +31,5 @@ body {
     font-style: italic;
 }
 #border{
-   border: 2px black;
+   border: 5px solid black;
 }
