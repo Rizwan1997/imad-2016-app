@@ -62,8 +62,8 @@ function createtemplate(data){
             return htmltemplate;
     }
 
-app.get('/:articleName', function(res,req){
-    var articleName = req.params.articleName;
+app.get('/:article-Name', function(res,req){
+    var articleName = req.params.article-Name;
     res.send(createtemplate(articles[articleName]));
 });
     
