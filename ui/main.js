@@ -14,6 +14,6 @@ button.onclick=function(){
        }
    };
    request.open('GET','http://rizwan1997.imad.hasura-app.io/counter',true);
-   request.send(true);
+   request.send(null);
 };
     
