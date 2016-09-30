@@ -31,5 +31,7 @@ body {
     font-style: italic;
 }
 #border{
-   border: 1px solid black;
+   outline-width: 1px;
+   outline-style: dotted;
+   outline-color: black;
 }
