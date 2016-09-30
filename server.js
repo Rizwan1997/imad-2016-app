@@ -15,9 +15,9 @@ app.get('/ui/style.css', function (req, res) {
 
 var articles = {
     'article-one': {
-        title: 'Article one';
-        heading: 'Article one';
-        date: '26/09/2016';
+        title: 'Article one',
+        heading: 'Article one',
+        date: '26/09/2016',
         content: `<!doctype html>
                 <html>
                 <head>
@@ -34,11 +34,11 @@ var articles = {
                 <img src="/ui/madi.png" class="img-small"/>
                 </body>
             </html> `
-    } };
-    'article-two':{
-        title: 'Article two';
-        heading: 'Article two';
-        date: '27/09/2016';
+     } };
+     'article-two': {
+        title: 'Article two',
+        heading: 'Article two',
+        date: '27/09/2016',
         content: `
         <!doctype html>
     <html>
