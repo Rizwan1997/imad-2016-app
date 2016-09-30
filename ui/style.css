@@ -26,6 +26,9 @@ body {
 .italic{
     font-style: italic;
 }
-.udeco{
+#udeco{
     text-decoration: underline;
+}
+.marg{
+    margin-left: 50px;
 }
