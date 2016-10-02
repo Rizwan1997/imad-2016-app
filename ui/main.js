@@ -20,12 +20,12 @@ button.onclick=function(){
 };
     
 var nameinput=document.getElementById('name');
-var name1= nameinput.value;
+var nameo= nameinput.value;
 submit.onclick= function(){
-    var names= ['name1','name2','name3'];
+    var names= ['nameo1','nameo2','nameo3'];
     var list= '';
     for(var i=0;i<names.lenght;i++){
-    list+='<li'>names[i]'</li>'; }
+    list+='<li'>nameo[i]'</li>'; }
     var ul=document.getElementById('namelist');
-    ul.innerHTML= JSON.stringify(list);
+    ul.innerHTML= list;
 };
