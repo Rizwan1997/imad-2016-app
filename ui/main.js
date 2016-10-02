@@ -29,5 +29,5 @@ submit.onclick= function(){
     for(var i=0;i<names.lenght;i++){
     list+='<li>'+names[i]+'</li>'; }
     var ul=document.getElementById('namelist');
-    ul.innerHTML= JSON.parse(names);
+    ul.innerHTML= JSON.parse(nameo);
 };
