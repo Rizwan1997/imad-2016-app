@@ -27,6 +27,12 @@ app.get('/ind2', function (req, res) {
   res.sendFile(path.join(__dirname, 'index2.html'));
 });
 
+app.get('/submit-name/:name', function (req, res) {
+  var names= req.params.name;
+  names.push(name);
+  res.send(JSON.stringify(names));
+});
+
 app.get('/ui/madi.png', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
 });
