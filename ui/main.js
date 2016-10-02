@@ -19,3 +19,13 @@ button.onclick=function(){
    request.send(null);
 };
     
+var nameinput=document.getElementById('name');
+var name1= nameinput.value;
+submit.onclick= function(){
+    var names= ['name1','name2','name3'];
+    var list= '';
+    for(var i=0;i<names.lenght;i++){
+    list+='<li'>names[i]'</li>'; }
+    var ul=document.getElementById('namelist');
+    ul.innerHTML= list;
+};
