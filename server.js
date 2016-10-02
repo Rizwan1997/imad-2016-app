@@ -27,8 +27,9 @@ app.get('/ind2', function (req, res) {
   res.sendFile(path.join(__dirname, 'index2.html'));
 });
 
+var names= [];
 app.get('/submit-name/:name', function (req, res) {
-  var names= req.params.name;
+  var name= req.params.name;
   names.push(name);
   res.send(JSON.stringify(names));
 });
