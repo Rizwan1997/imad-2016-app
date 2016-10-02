@@ -27,5 +27,5 @@ submit.onclick= function(){
     for(var i=0;i<names.lenght;i++){
     list+='<li'>names[i]'</li>'; }
     var ul=document.getElementById('namelist');
-    ul.innerHTML= list;
+    ul.innerHTML= JSON.stringify(list);
 };
