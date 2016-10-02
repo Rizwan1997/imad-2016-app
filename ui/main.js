@@ -25,7 +25,7 @@ submit.onclick= function(){
     var names= ['nameo1','nameo2','nameo3'];
     var list= '';
     for(var i=0;i<names.lenght;i++){
-    list+='<li'>nameo[i]'</li>'; }
+    list+='<li'>names[i]'</li>'; }
     var ul=document.getElementById('namelist');
     ul.innerHTML= list;
 };
