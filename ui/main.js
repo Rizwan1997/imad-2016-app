@@ -21,11 +21,12 @@ button.onclick=function(){
     
 var nameinput=document.getElementById('name');
 var nameo= nameinput.value;
+var submit=document.getElementById('submit_btn');
 submit.onclick= function(){
     var names= ['nameo1','nameo2','nameo3'];
     var list= '';
     for(var i=0;i<names.lenght;i++){
     list+='<li'>names[i]'</li>'; }
     var ul=document.getElementById('namelist');
-    ul.innerHTML= list;
+    ul.innerHTML= JSON.stringify(names);
 };
