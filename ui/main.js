@@ -19,15 +19,26 @@ button.onclick=function(){
    request.send(counter);
 };
     
-var nameinput=document.getElementById('name');
-var nameo= nameinput.value;
+
 var submit=document.getElementById('submit_btn');
 submit.onclick= function(){
-    var names;
-    names.push(nameo);
-    var list= '';
-    for(var i=0;i<names.lenght;i++){
-    list+='<li>'+names[i]+'</li>'; }
-    var ul=document.getElementById('namelist');
-    ul.innerHTML= JSON.parse(nameo);
+   var request = new XMLHttpRequest();
+      request.onreadystatecharge = function(){
+           if(request.readystate=== XMLHttpRequest.DONE){
+           if(request.status===200){
+        var names = request.responseText;
+        names = JSON.parse(names);
+        var list = '';
+        for(var i=0;i<names.length;i++){
+            list+= '<li>' +names[i]+ '</li';
+        }
+        var ul = document.getElementById('namelist');
+        ul.innerHTML = list;
+           } } 
+};
+
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+   request.open('GET','http://rizwan1997.imad.hasura-app.io/submit-name?name=' + name,true);
+      request.send(counter);
 };
