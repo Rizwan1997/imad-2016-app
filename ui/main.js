@@ -6,7 +6,7 @@ button.onclick=function(){
    var request = new XMLHttpRequest();
    request.onreadystatecharge = function(){
        if(request.readystate=== XMLHttpRequest.DONE){
-           if(request.status===200){
+           if (this.readyState == 4 && this.status == 200){
                var counter= request.responseText;
                var cnt=document.getElementById('count');
 
@@ -25,7 +25,7 @@ submit.onclick= function(){
    var request = new XMLHttpRequest();
       request.onreadystatecharge = function(){
            if(request.readystate=== XMLHttpRequest.DONE){
-           if(request.status===200){
+           if (this.readyState == 4 && this.status == 200){
         var names = request.responseText;
         names = JSON.parse(names);
         var list = '';
