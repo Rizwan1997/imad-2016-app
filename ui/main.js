@@ -22,14 +22,7 @@ button.onclick=function(){
 
 var submit=document.getElementById('submit_btn');
 submit.onclick= function(){
-     var xhttp;
-  if (window.XMLHttpRequest) {
-    // code for modern browsers
-    xhttp = new XMLHttpRequest();
-    } else {
-    // code for IE6, IE5
-    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
-  }
+     
    var request = new XMLHttpRequest();
       xhttp.onreadystatecharge = function(){
            if(request.readystate=== XMLHttpRequest.DONE){
