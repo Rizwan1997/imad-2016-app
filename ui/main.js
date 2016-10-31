@@ -22,11 +22,19 @@ button.onclick=function(){
 
 var submit=document.getElementById('submit_btn');
 submit.onclick= function(){
+     var xhttp;
+  if (window.XMLHttpRequest) {
+    // code for modern browsers
+    xhttp = new XMLHttpRequest();
+    } else {
+    // code for IE6, IE5
+    xhttp = new ActiveXObject("Microsoft.XMLHTTP");
+  }
    var request = new XMLHttpRequest();
-      request.onreadystatecharge = function(){
+      xhttp.onreadystatecharge = function(){
            if(request.readystate=== XMLHttpRequest.DONE){
            if (this.readyState == 4 && this.status == 200){
-        var names = request.responseText;
+        var names = this.responseText;
         names = JSON.parse(names);
         var list = '';
         for(var i=0;i<names.length;i++){
@@ -39,6 +47,6 @@ submit.onclick= function(){
 
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
-   request.open('GET','http://rizwan1997.imad.hasura-app.io/submit-name/name=' + name,true);
-      request.send(counter);
+   xhttp.open('GET','http://rizwan1997.imad.hasura-app.io/submit-name/name=' + name,true);
+      xhttp.send(counter);
 };
