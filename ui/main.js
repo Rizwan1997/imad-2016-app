@@ -1,22 +1,8 @@
-console.log('Loaded!');
-
-var button=document.getElementById('counter');
-
-button.onclick=function(){
-   var request = new XMLHttpRequest();
-   request.onreadystatecharge = function(){
-       if(request.readystate=== XMLHttpRequest.DONE){
-           if (this.readyState == 4 && this.status == 200){
-               var counter= request.responseText;
-               var cnt=document.getElementById('count');
-
-               cnt.innerHTML= counter.toString();
-
-           }
-       }
-   };
-   request.open('GET','http://rizwan1997.imad.hasura-app.io/counter',true);
-   request.send(counter);
-};
-    
+var button = document.getElementById("counter");
+var counter = 0;
+button.onclick = function(){
+    counter = counter + 1;
+    var span = document.getElementById("count");
+    span.innerHTML = counter.toString();
+}
 
