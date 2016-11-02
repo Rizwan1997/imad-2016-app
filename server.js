@@ -48,11 +48,11 @@ app.get('/contact', function (req, res) {
 });
 
 app.get('/Blog_comment', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'Blog_comment'));
+  res.sendFile(path.join(__dirname, 'ui', 'Blog_comment.html'));
 });
 
 app.get('/blog_posts', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog_posts'));
+  res.sendFile(path.join(__dirname, 'ui', 'blog_posts.html'));
 });
 var names= [];
 app.get('/submit-name', function (req, res) {
