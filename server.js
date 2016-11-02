@@ -66,27 +66,27 @@ app.get('/ui/madi.png', function (req, res) {
 });
 
 app.get('/ui/me.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'me.jpg'));
 });
 
 app.get('/ui/me1.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'me1.jpg'));
 });
 
 app.get('/ui/main.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'main.jpg'));
 });
 
 app.get('/ui/profile.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'profile.jpg'));
 });
 
 app.get('/ui/star.jpg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'star.jpg'));
 });
 
 app.get('/ui/image.jpeg', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'madi.png'));
+  res.sendFile(path.join(__dirname, 'ui', 'image.jpeg'));
 });
 
 var port = 8080; // Use 8080 for local development because you might already have apache running on 80
