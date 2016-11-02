@@ -6,7 +6,7 @@ background-color: white;
     
 margin-top: 0;
 
-background-image: url("ui/profile.jpg");
+background-image: url("/ui/profile.jpg");
 background-size: cover;
 background-repeat: no-repeat;
 opacity: 0.9;     
