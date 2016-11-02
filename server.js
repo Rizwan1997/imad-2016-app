@@ -89,7 +89,7 @@ app.get('/ui/image.jpeg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'image.jpeg'));
 });
 
-app.get('/ui/const.jpeg', function (req, res) {
+app.get('/ui/const.jpg', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'const.jpg'));
 });
 
