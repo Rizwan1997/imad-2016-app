@@ -143,13 +143,12 @@ text-align: center;
 p{ text-align: center;
    padding-bottom: 50px; }
    
-   #panel, #flip {
+ #panel, #flip {
     padding: 5px;
     text-align: center;
-    
-    
-}
+    }
 
 #panel {
     padding: 50px;
-    display: none;
+    display: none;  
+}
