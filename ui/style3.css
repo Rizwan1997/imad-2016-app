@@ -147,6 +147,7 @@ input[type=text], select {
 }
 input { font-size: 15px;
         font-family: calibri; }
+
 textarea { font-size: 15px;
 	   width: 50%;
            font-family: Calibri;
