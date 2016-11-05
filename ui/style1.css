@@ -201,6 +201,6 @@ th, td {
     padding: 8px;
     padding-right: 120px;}
 
-tr:nth-child(even){background-color: #e9f0f5; }
+tr:nth-child(even){background-color: #e8eef7; }
 tr:nth-child(odd){background-color: #c4cdd2; }
 
