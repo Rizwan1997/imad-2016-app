@@ -79,7 +79,7 @@ app.get('/blog_posts', function (req, res) {
     // After all data is returned, close connection and return results
     query.on('end', () => {
       done();
-      return res.json(results);
+      res.send(JSON(results));
     });
   });
 });
