@@ -31,7 +31,24 @@
        <img src="/ui/madi.png" class="img-medium"/>
     <div class="text-low">IMAD</div>  
    </ul> 
-   <img src="/ui/const.jpg">
+   
+   <script src="/server.js">
+     var pool = new Pool(config);
+      pool.query('SELECT * FROM blog',function(err, result) {
+          if (err){
+         res.status(500).send(err.toString());
+     } else {
+         echo "<table>";
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Comment</th>
+          </tr>
+          <tr>
+     }
+         
+     }
+   </script>
    <hr/>
    <p>&#169; 2016 | Rizwan Parvez. Proudly created with imad.hasura-app.io</p>
 
