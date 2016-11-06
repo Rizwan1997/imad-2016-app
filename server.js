@@ -61,27 +61,7 @@ app.get('/Blog_comment', function (req, res) {
 });
 
 app.get('/blog_posts', function (req, res) {
-  var results = [];
-  // Get a Postgres client from the connection pool
-  Pool.connect('db.imad.hasura-app.io', (err, client, done) => {
-    // Handle connection errors
-    if(err) {
-      done();
-      console.log(err);
-      return res.status(500).json({success: false, data: err});
-    }
-    // SQL Query > Select Data
-    var query = client.query('SELECT * FROM blog ORDER BY user_id ASC;');
-    // Stream results back one row at a time
-    query.on('row', (row) => {
-      results.push(row);
-    });
-    // After all data is returned, close connection and return results
-    query.on('end', () => {
-      done();
-      res.send(JSON(results));
-    });
-  });
+ res.sendFile(path.join(__dirname, 'ui', 'blog_posts.html'));
 });
 
 var names= [];
