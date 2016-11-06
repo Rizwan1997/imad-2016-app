@@ -63,7 +63,7 @@ app.get('/Blog_comment', function (req, res) {
 app.get('/blog_posts', function (req, res) {
   var results = [];
   // Get a Postgres client from the connection pool
-  Pool.connect(config.host, (err, client, done) => {
+  Pool.connect('db.imad.hasura-app.io', (err, client, done) => {
     // Handle connection errors
     if(err) {
       done();
