@@ -62,8 +62,19 @@ app.get('/Blog_comment', function (req, res) {
 
 var pool = new Pool(config);
 app.get('/blog_posts', function (req, res) {
-  res.sendFile(path.join(__dirname, 'ui', 'blog_posts.html'));
+    client.query('SELECT * FROM blog', function (err, result) {
+    if (err) throw err;
+
+    // just print the result to the console
+    console.log(result.rows[0]); // outputs: { name: 'brianc' }
+
+    // disconnect the client
+    client.end(function (err) {
+      if (err) throw err;
+    });
+  });
 });
+  
 
 var names= [];
 app.get('/submit-name', function (req, res) {
