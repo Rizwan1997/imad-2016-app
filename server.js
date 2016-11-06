@@ -60,7 +60,7 @@ app.get('/Blog_comment', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Blog_comment.html'));
 });
 
-router.get('/blog_posts', (req, res, next) => {
+app.get('/blog_posts', function (req, res) {
   var results = [];
   // Get a Postgres client from the connection pool
   Pool.connect(host, (err, client, done) => {
