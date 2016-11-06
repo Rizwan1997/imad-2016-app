@@ -2,7 +2,7 @@ var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
 var Pool = require('pg').Pool;
-
+var router = express.Router();
 var config = {
     user : 'rizwan1997',
     database: 'rizwan1997',
@@ -60,21 +60,29 @@ app.get('/Blog_comment', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'Blog_comment.html'));
 });
 
-var pool = new Pool(config);
-app.get('/blog_posts', function (req, res) {
-    pool.query('SELECT * FROM blog', function (err, result) {
-    if (err) throw err;
-
-    // just print the result to the console
-    console.log(result.rows[0]); // outputs: { name: 'brianc' }
-
-    // disconnect the client
-   pool.end(function (err) {
-      if (err) throw err;
+router.get('/blog_posts', (req, res, next) => {
+  var results = [];
+  // Get a Postgres client from the connection pool
+  Pool.connect(host, (err, client, done) => {
+    // Handle connection errors
+    if(err) {
+      done();
+      console.log(err);
+      return res.status(500).json({success: false, data: err});
+    }
+    // SQL Query > Select Data
+    var query = client.query('SELECT * FROM blog ORDER BY user_id ASC;');
+    // Stream results back one row at a time
+    query.on('row', (row) => {
+      results.push(row);
+    });
+    // After all data is returned, close connection and return results
+    query.on('end', () => {
+      done();
+      return res.json(results);
     });
   });
 });
-  
 
 var names= [];
 app.get('/submit-name', function (req, res) {
